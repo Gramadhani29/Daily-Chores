@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Chores</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <style>
+    h1 {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      background: white;
+    }
+
+    #chore-list {
+      margin-top: 2rem;
+      list-style: none;
+      padding: 0;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Chores</h1>
+
+  <form id="chore-form">
+    <input type="text" id="chore-name" placeholder="Chore name" required />
+    <label for="assigned-to">Tugas untuk:</label>
+    <select id="assigned-to">
+      <option value="">-- Pilih orang --</option>
+      <option value="Ayah">Ayah</option>
+      <option value="Ibu">Ibu</option>
+      <option value="Saya">Saya</option>
+    </select>
+    <button type="submit">Add Chore</button>
+  </form>
+
+  <ul id="chore-list"></ul>
+
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
